@@ -1,0 +1,37 @@
+{% extends "course/base.html" %}
+{% block content %}
+
+    <br><br><br>
+    <div class="container">
+      <br>
+      <h2 class="con">Ongoing Registration: </h2>
+      <div class="jumbotron">
+
+        <ul type="square" >
+
+            {% for d in c %}
+
+              <li class="list">
+                <p><h2>{{ d.semester }}</h2></p>
+                <p style="text-indent: 5em;"><h2>Deadline: &nbsp;{{d.finish_date}}</h2> </p>
+              </li>
+
+
+            {% endfor %}
+
+        </ul>
+        </div>
+        <h2 class="con">Register Now:</h2> </p>
+        <div class="jumbotron">
+          <form method="POST" name="reg">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="Submit" name="" class="btn btn-success btn-lg" value="Next">
+          </form>
+        </p>
+        </div>
+
+
+    </div>
+  {% endblock %}

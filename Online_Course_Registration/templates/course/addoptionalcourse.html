@@ -1,0 +1,17 @@
+{% extends "course/base.html" %}
+{% block content %}
+<br><br><br>
+<div class="container">
+  <h1 class="con">Add Optional Courses</h1> </p>
+  <div class="jumbotron">
+    <form method="POST" name="cou">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <input type="Submit" name="" class="btn btn-success" value="Add Course">
+    </form>
+  </p>
+  </div>
+
+</div>
+{% endblock %}

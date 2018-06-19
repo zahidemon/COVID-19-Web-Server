@@ -1,0 +1,67 @@
+{% extends "course/base.html" %}
+{% block content %}
+<br><br><br>
+<div class="container">
+  <div class="jumbotron">
+
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-info btn-lg" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Search Courses
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <div class="jumbotron">
+              <form method="POST" name="cou">
+                {% csrf_token %}
+                {{ form1.as_p }}
+
+                <input type="Submit" name="" class="btn btn-success" value="Get Courses">
+              </form>
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-info btn-lg collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Add New Courses
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+
+                <h2>Add Compulsary Course:</h2> <a href="{% url "course:addcourse" %}"> <button type="button" class="btn btn-success btn-lg" name="button">Go</button> </a>
+                <br>
+
+              <h2>Add Optional Course:</h2> <a href="{% url "course:addoptionalcourse" %}"> <button type="button" class="btn btn-success btn-lg" name="button">Go</button> </a>
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

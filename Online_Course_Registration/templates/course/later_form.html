@@ -1,0 +1,15 @@
+{% extends "course/base.html" %}
+{% block content %}
+<br><br><br>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Give the following information to receive a reminder</h1>
+    <form class="post-form" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+    <button type="submit" class="save btn-success btn-lg" > Submit</button>
+
+    </form>
+  </div>
+</div>
+{% endblock %}
