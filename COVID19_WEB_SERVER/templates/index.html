@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+
+    <div class="container">
+      <br><br><br>
+      <h2 class="con"> <b>Instructions </b> </h2>
+      <div class="jumbotron">
+
+        <h3> <b> 1. First, Upload a chest X-ray image in only one of the following formats: <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;* PNG <br> &nbsp;&nbsp;&nbsp;&nbsp;* JPG / JPEG <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;* jpg / jpeg </b> </h3><br>
+        <h3> <b> 2. Next, click the upload button to get the result. </b> </h3><br>
+        <h3> <b> 3. The result will be provide a probability of being COVID-19 positive. </b> </h3><br>
+        </div>
+        <h2 class="con"> <b>Upload a chest X-ray image</b> </h2> </p>
+        <div class="jumbotron">
+          <form method="POST" enctype="multipart/form-data">
+
+            <h3 class="bol">*Make sure to select semester and department in the next page again.</h3>
+            {% if messages %}
+            {% for m in messages %}
+            <div>
+                <h3>  {{m|safe}} </h3>
+
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% csrf_token %}
+          <input type="file" name="sentFile" />
+          <br> <br>
+          <input type="submit" class="btn btn-lg btn-success" name="submit" value="Upload" />
+          </form>
+        </p>
+        </div>
+
+
+    </div>
+
+
+
+{% endblock %}
